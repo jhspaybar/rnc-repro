@@ -1,6 +1,7 @@
 import { Text, useSx, View, H1, P, Row, A } from 'dripsy'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
+import { Calendar } from 'react-native-calendars'
 
 export function HomeScreen() {
   const sx = useSx()
@@ -9,6 +10,11 @@ export function HomeScreen() {
     <View
       sx={{ flex: 1, justifyContent: 'center', alignItems: 'center', p: 16 }}
     >
+      <Calendar
+        onDayPress={(day) => {
+          console.log('selected day', day)
+        }}
+      />
       <H1 sx={{ fontWeight: '800' }}>Welcome to Solito.</H1>
       <View sx={{ maxWidth: 600 }}>
         <P sx={{ textAlign: 'center' }}>
